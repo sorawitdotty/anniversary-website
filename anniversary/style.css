@@ -1,0 +1,888 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Prompt", sans-serif;
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 105, 180, 0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(255, 20, 147, 0.10),
+            transparent 35%
+        ),
+        #120b12;
+
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.35;
+}
+
+.glow-1 {
+    width: 350px;
+    height: 350px;
+    background: #ff4fa3;
+    top: -100px;
+    left: -100px;
+}
+
+.glow-2 {
+    width: 400px;
+    height: 400px;
+    background: #c21875;
+    right: -150px;
+    top: 30%;
+}
+
+.glow-3 {
+    width: 300px;
+    height: 300px;
+    background: #ff85c8;
+    left: 35%;
+    bottom: -150px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    position: relative;
+}
+
+.hero-content {
+    max-width: 900px;
+    width: 100%;
+}
+
+.small-text {
+    color: #ff9ccc;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+
+    font-weight: 500;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 8vw, 100px);
+
+    line-height: 1.1;
+
+    font-weight: 600;
+
+    background:
+        linear-gradient(
+            120deg,
+            #ffffff,
+            #ff9dcc,
+            #ffffff
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    -webkit-text-fill-color: #ff5fae;
+
+    display: inline-block;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+.line {
+    width: 90px;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #ff72b6,
+        transparent
+    );
+
+    margin: 0 auto 25px;
+}
+
+.hero-description {
+    color: #d9c9d5;
+
+    font-size: 17px;
+
+    line-height: 2;
+
+    font-weight: 300;
+}
+
+.since {
+    margin-top: 25px;
+
+    color: #a997a5;
+
+    font-size: 14px;
+}
+
+.since span {
+    color: #ff8fc4;
+
+    font-weight: 500;
+
+    margin-left: 5px;
+}
+
+
+/* =========================
+   COUNTER
+========================= */
+
+.counter {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-top: 45px;
+
+    flex-wrap: wrap;
+}
+
+.counter-box {
+    width: 130px;
+    min-height: 115px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(255, 150, 205, 0.25);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.07),
+            rgba(255, 90, 170, 0.04)
+        );
+
+    backdrop-filter: blur(15px);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.25),
+        inset 0 0 20px rgba(255, 100, 180, 0.03);
+
+    transition: 0.3s;
+}
+
+.counter-box:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(255, 130, 190, 0.6);
+
+    box-shadow:
+        0 15px 45px rgba(255, 50, 150, 0.15);
+}
+
+.counter-box span {
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+
+    color: #ff9dcc;
+
+    line-height: 1;
+}
+
+.counter-box small {
+    margin-top: 12px;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #a997a5;
+}
+
+.scroll-text {
+    margin-top: 70px;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #806f7b;
+
+    animation: scrollDown 2s infinite;
+}
+
+@keyframes scrollDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(8px);
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memories {
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 120px 25px;
+}
+
+.section-header {
+    text-align: center;
+
+    margin-bottom: 65px;
+}
+
+.section-small {
+    display: block;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    color: #ff83bd;
+
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 5vw, 65px);
+
+    font-weight: 500;
+
+    color: #ffffff;
+}
+
+.section-header h2 span {
+    color: #ff70b5;
+}
+
+.section-header p {
+    color: #a997a5;
+
+    margin-top: 15px;
+
+    font-weight: 300;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+.memory-card {
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border: 1px solid
+        rgba(255, 150, 205, 0.12);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.memory-card:hover {
+    transform: translateY(-10px);
+
+    border-color:
+        rgba(255, 120, 190, 0.5);
+
+    box-shadow:
+        0 25px 60px
+        rgba(255, 40, 140, 0.12);
+}
+
+
+/* IMAGE */
+
+.image-wrapper {
+    width: 100%;
+
+    height: 300px;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.7s ease;
+}
+
+.memory-card:hover
+.image-wrapper img {
+    transform: scale(1.08);
+}
+
+.image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        rgba(255, 60, 160, 0.15);
+
+    opacity: 0;
+
+    transition: 0.4s;
+}
+
+.memory-card:hover
+.image-overlay {
+    opacity: 1;
+}
+
+.image-overlay span {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(10px);
+
+    font-size: 30px;
+
+    color: white;
+}
+
+
+/* CARD TEXT */
+
+.memory-text {
+    padding: 24px;
+}
+
+.memory-text > span {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #ff78b8;
+}
+
+.memory-text h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 24px;
+
+    margin-top: 8px;
+
+    color: #fff;
+}
+
+.memory-text p {
+    color: #9e8c98;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    margin-top: 8px;
+}
+
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.love-section {
+    padding: 100px 20px 150px;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.love-card {
+    width: 100%;
+
+    max-width: 850px;
+
+    padding: 65px 70px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.07),
+            rgba(255, 80, 170, 0.025)
+        );
+
+    backdrop-filter: blur(20px);
+
+    border:
+        1px solid
+        rgba(255, 120, 190, 0.25);
+
+    box-shadow:
+        0 30px 100px
+        rgba(0, 0, 0, 0.3);
+
+    position: relative;
+}
+
+.love-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -1px;
+
+    border-radius: 30px;
+
+    padding: 1px;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255, 100, 180, 0.5),
+            transparent
+        );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+
+    mask-composite: exclude;
+
+    pointer-events: none;
+}
+
+.heart-icon {
+    font-size: 50px;
+
+    color: #ff73b7;
+
+    margin-bottom: 20px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.love-card h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(35px, 5vw, 55px);
+
+    font-weight: 500;
+
+    margin-bottom: 25px;
+}
+
+.love-line {
+    width: 60px;
+
+    height: 2px;
+
+    background: #ff72b5;
+
+    margin: 0 auto 35px;
+}
+
+.love-card p {
+    color: #c5b4c0;
+
+    font-size: 15px;
+
+    line-height: 2.1;
+
+    margin-bottom: 20px;
+
+    font-weight: 300;
+}
+
+.signature {
+    margin-top: 35px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 28px;
+
+    font-style: italic;
+
+    color: #ff9dcc;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 50px 20px 60px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.05);
+}
+
+.footer-heart {
+    color: #ff70b5;
+
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+footer p {
+    color: #766774;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+footer span {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #ff86be;
+
+    font-family:
+        "Playfair Display", serif;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(8, 4, 8, 0.94);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    padding: 30px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90vw;
+
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 30px 100px
+        rgba(255, 60, 160, 0.2);
+}
+
+.close-button {
+    position: absolute;
+
+    top: 25px;
+
+    right: 35px;
+
+    border: none;
+
+    background: none;
+
+    color: white;
+
+    font-size: 45px;
+
+    cursor: pointer;
+
+    font-weight: 200;
+
+    transition: 0.3s;
+}
+
+.close-button:hover {
+    color: #ff73b7;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart {
+    position: fixed;
+
+    bottom: -30px;
+
+    color: #ff72b5;
+
+    font-size: 15px;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    animation:
+        floatHeart
+        8s linear forwards;
+
+    z-index: -1;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            scale(0.5)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.5;
+    }
+
+    80% {
+        opacity: 0.2;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            scale(1.2)
+            rotate(30deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 100svh;
+
+        padding: 60px 18px;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .counter {
+        gap: 10px;
+    }
+
+    .counter-box {
+        width: calc(50% - 10px);
+
+        min-height: 100px;
+    }
+
+    .counter-box span {
+        font-size: 34px;
+    }
+
+    .memories {
+        padding:
+            80px 18px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .image-wrapper {
+        height: 270px;
+    }
+
+    .love-section {
+        padding:
+            60px 18px 100px;
+    }
+
+    .love-card {
+        padding:
+            45px 25px;
+    }
+
+    .love-card p {
+        font-size: 14px;
+    }
+
+    .close-button {
+        top: 15px;
+        right: 20px;
+    }
+
+    .lightbox {
+        padding: 15px;
+    }
+
+}

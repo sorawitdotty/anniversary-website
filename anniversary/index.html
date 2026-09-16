@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Anniversary ❤️</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Prompt:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glow glow-3"></div>
+    </div>
+
+    <!-- Floating Hearts -->
+    <div class="hearts"></div>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-text">
+                TOGETHER WITH YOU
+            </div>
+
+            <h1>
+                Happy Anniversary
+                <span>❤️</span>
+            </h1>
+
+            <div class="line"></div>
+
+            <p class="hero-description">
+                ขอบคุณที่เข้ามาเป็นส่วนหนึ่งของชีวิต
+                <br>
+                และทำให้ทุกวันธรรมดากลายเป็นวันที่พิเศษ
+            </p>
+
+            <div class="since">
+                Since
+                <span id="startDateText"></span>
+            </div>
+
+            <!-- Counter -->
+
+            <div class="counter">
+
+                <div class="counter-box">
+                    <span id="days">0</span>
+                    <small>DAYS</small>
+                </div>
+
+                <div class="counter-box">
+                    <span id="hours">0</span>
+                    <small>HOURS</small>
+                </div>
+
+                <div class="counter-box">
+                    <span id="minutes">0</span>
+                    <small>MINUTES</small>
+                </div>
+
+                <div class="counter-box">
+                    <span id="seconds">0</span>
+                    <small>SECONDS</small>
+                </div>
+
+            </div>
+
+            <div class="scroll-text">
+                ↓ SCROLL TO OUR MEMORIES ↓
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MEMORIES ================= -->
+
+    <section class="memories">
+
+        <div class="section-header">
+
+            <span class="section-small">
+                OUR STORY
+            </span>
+
+            <h2>
+                Our Memories
+                <span>♡</span>
+            </h2>
+
+            <p>
+                เรื่องราวเล็ก ๆ ที่กลายเป็นความทรงจำที่ยิ่งใหญ่
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <!-- Image 1 -->
+            <div class="memory-card"
+                onclick="openLightbox('images/photo1.jpg')">
+
+                <div class="image-wrapper">
+                    <img src="images/1.png" alt="Memory 1">
+                    <div class="image-overlay">
+                        <span>♡</span>
+                    </div>
+                </div>
+
+                <div class="memory-text">
+                    <span>MEMORY 01</span>
+                </div>
+
+            </div>
+
+
+            <!-- Image 2 -->
+            <div class="memory-card"
+                onclick="openLightbox('images/photo2.jpg')">
+
+                <div class="image-wrapper">
+                    <img src="images/3.png" alt="Memory 2">
+                    <div class="image-overlay">
+                        <span>♡</span>
+                    </div>
+                </div>
+
+                <div class="memory-text">
+                    <span>MEMORY 02</span>
+                </div>
+
+            </div>
+
+
+            <!-- Image 3 -->
+            <div class="memory-card"
+                onclick="openLightbox('images/photo3.jpg')">
+
+                <div class="image-wrapper">
+                    <img src="images/4.png" alt="Memory 3">
+                    <div class="image-overlay">
+                        <span>♡</span>
+                    </div>
+                </div>
+
+                <div class="memory-text">
+                    <span>MEMORY 03</span>
+                </div>
+
+            </div>
+
+
+            <!-- Image 4 -->
+            <div class="memory-card"
+                onclick="openLightbox('images/photo4.jpg')">
+
+                <div class="image-wrapper">
+                    <img src="images/5.png" alt="Memory 4">
+                    <div class="image-overlay">
+                        <span>♡</span>
+                    </div>
+                </div>
+
+                <div class="memory-text">
+                    <span>MEMORY 04</span>
+                </div>
+
+            </div>
+
+
+            <!-- Image 5 -->
+            <div class="memory-card"
+                onclick="openLightbox('images/photo5.jpg')">
+
+                <div class="image-wrapper">
+                    <img src="images/6.png" alt="Memory 5">
+                    <div class="image-overlay">
+                        <span>♡</span>
+                    </div>
+                </div>
+
+                <div class="memory-text">
+                    <span>MEMORY 05</span>
+                </div>
+
+            </div>
+
+
+            <!-- Image 6 -->
+            <div class="memory-card"
+                onclick="openLightbox('images/photo6.jpg')">
+
+                <div class="image-wrapper">
+                    <img src="images/7.png" alt="Memory 6">
+                    <div class="image-overlay">
+                        <span>♡</span>
+                    </div>
+                </div>
+
+                <div class="memory-text">
+                    <span>MEMORY 06</span>
+                </div>
+
+            </div>
+
+
+            <!-- Image 7 -->
+            <div class="memory-card"
+                onclick="openLightbox('images/photo7.jpg')">
+
+                <div class="image-wrapper">
+                    <img src="images/8.png" alt="Memory 7">
+                    <div class="image-overlay">
+                        <span>♡</span>
+                    </div>
+                </div>
+
+                <div class="memory-text">
+                    <span>MEMORY 07</span>
+                </div>
+
+            </div>
+
+
+            <!-- Image 8 -->
+            <div class="memory-card"
+                onclick="openLightbox('images/photo8.jpg')">
+
+                <div class="image-wrapper">
+                    <img src="images/9.png" alt="Memory 8">
+                    <div class="image-overlay">
+                        <span>♡</span>
+                    </div>
+                </div>
+
+                <div class="memory-text">
+                    <span>MEMORY 08</span>
+                </div>
+
+            </div>
+
+
+            <!-- Image 9 -->
+            <div class="memory-card"
+                onclick="openLightbox('images/photo9.jpg')">
+
+                <div class="image-wrapper">
+                    <img src="images/10.png" alt="Memory 9">
+                    <div class="image-overlay">
+                        <span>♡</span>
+                    </div>
+                </div>
+
+                <div class="memory-text">
+                    <span>MEMORY 09</span>
+                </div>
+
+            </div>
+
+
+            <!-- Image 10 -->
+            <div class="memory-card"
+                onclick="openLightbox('images/photo10.jpg')">
+
+                <div class="image-wrapper">
+                    <img src="images/11.png" alt="Memory 10">
+                    <div class="image-overlay">
+                        <span>♡</span>
+                    </div>
+                </div>
+
+                <div class="memory-text">
+                    <span>MEMORY 10</span>
+                </div>
+
+            </div>
+
+
+            <!-- Image 11 -->
+            <div class="memory-card"
+                onclick="openLightbox('images/photo11.jpg')">
+
+                <div class="image-wrapper">
+                    <img src="images/12.png" alt="Memory 11">
+                    <div class="image-overlay">
+                        <span>♡</span>
+                    </div>
+                </div>
+
+                <div class="memory-text">
+                    <span>MEMORY 11</span>
+                </div>
+
+            </div>
+
+
+            <!-- Image 12 -->
+            <div class="memory-card"
+                onclick="openLightbox('images/photo12.jpg')">
+
+                <div class="image-wrapper">
+                    <img src="images/13.png" alt="Memory 12">
+                    <div class="image-overlay">
+                        <span>♡</span>
+                    </div>
+                </div>
+
+                <div class="memory-text">
+                    <span>MEMORY 12</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= LOVE LETTER ================= -->
+
+    <section class="love-section">
+
+        <div class="love-card">
+
+            <div class="heart-icon">
+                ♡
+            </div>
+
+            <span class="section-small">
+                A LETTER FOR YOU
+            </span>
+
+            <h2>
+                ถึงคนพิเศษของฉัน
+            </h2>
+
+            <div class="love-line"></div>
+
+            <p>
+                ขอบคุณสำหรับทุกช่วงเวลาที่เราได้ใช้ร่วมกัน
+                ขอบคุณสำหรับรอยยิ้ม เสียงหัวเราะ
+                และทุกครั้งที่เธอคอยอยู่ข้าง ๆ กัน
+            </p>
+
+            <p>
+                อาจมีบางวันที่เราไม่เข้าใจกัน
+                อาจมีบางวันที่เหนื่อยหรือท้อ
+                แต่สิ่งหนึ่งที่อยากให้รู้คือ
+                เราดีใจที่ยังมีเธออยู่ตรงนี้
+            </p>
+
+            <p>
+                ขอให้หลังจากวันนี้
+                เราได้สร้างความทรงจำดี ๆ ด้วยกันอีกมากมาย
+                ได้หัวเราะ ได้เที่ยว ได้เติบโต
+                และได้อยู่ข้าง ๆ กันแบบนี้ไปเรื่อย ๆ
+            </p>
+
+            <div class="signature">
+                รักเธอเสมอ ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-heart">
+            ♥
+        </div>
+
+        <p>
+            Made with love
+        </p>
+
+        <span>
+            Happy Anniversary ❤️
+        </span>
+
+    </footer>
+
+
+
+    <!-- ================= LIGHTBOX ================= -->
+
+    <div id="lightbox" class="lightbox">
+
+        <button
+            class="close-button"
+            onclick="closeLightbox()">
+            ×
+        </button>
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt="Memory">
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
