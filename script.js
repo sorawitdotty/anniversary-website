@@ -1,6 +1,7 @@
 /* =========================================
    ANNIVERSARY DATE
 ========================================= */
+
 // แก้วันที่เริ่มต้นตรงนี้
 const startDate = new Date("2024-04-17T18:00:00");
 
@@ -8,15 +9,16 @@ const startDate = new Date("2024-04-17T18:00:00");
 /* =========================================
    SHOW START DATE
 ========================================= */
+
 const startDateText = document.getElementById("startDateText");
 
-const formattedDate = startDate.toLocaleDateString("th-TH", {
-    day: "numeric",
-    month: "long",
-    year: "numeric"
-});
-
 if (startDateText) {
+    const formattedDate = startDate.toLocaleDateString("th-TH", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    });
+
     startDateText.textContent = formattedDate;
 }
 
@@ -24,10 +26,12 @@ if (startDateText) {
 /* =========================================
    COUNTDOWN
 ========================================= */
+
 function updateCounter() {
     const now = new Date();
     let difference = now.getTime() - startDate.getTime();
 
+    // ถ้ายังไม่ถึงวันเริ่มต้น
     if (difference < 0) {
         difference = 0;
     }
@@ -50,44 +54,67 @@ function updateCounter() {
     if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, "0");
 }
 
+// เรียกครั้งแรก
 updateCounter();
+
+// อัปเดตทุก 1 วินาที
 setInterval(updateCounter, 1000);
 
 
+
 /* =========================================
-   LIGHTBOX
+   LIGHTBOX (SUPPORT CAPTION)
 ========================================= */
-function openLightbox(imageUrl) {
+
+function openLightbox(imageUrl, captionText = "") {
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxCaption = document.getElementById("lightboxCaption");
 
-    if (lightbox && lightboxImage) {
-        lightboxImage.src = imageUrl;
-        lightbox.classList.add("active");
-        document.body.style.overflow = "hidden";
+    if (lightboxImage) lightboxImage.src = imageUrl;
+    
+    if (lightboxCaption) {
+        lightboxCaption.textContent = captionText;
     }
+
+    if (lightbox) {
+        lightbox.classList.add("active");
+    }
+
+    // ป้องกันหน้าเว็บเลื่อน
+    document.body.style.overflow = "hidden";
 }
+
 
 function closeLightbox() {
     const lightbox = document.getElementById("lightbox");
 
     if (lightbox) {
         lightbox.classList.remove("active");
-        document.body.style.overflow = "auto";
     }
+
+    document.body.style.overflow = "auto";
 }
 
-// Close when clicking outside image
-const lightboxEl = document.getElementById("lightbox");
-if (lightboxEl) {
-    lightboxEl.addEventListener("click", function (event) {
+
+/* =========================================
+   CLOSE LIGHTBOX WHEN CLICK OUTSIDE IMAGE
+========================================= */
+
+const lightboxElement = document.getElementById("lightbox");
+if (lightboxElement) {
+    lightboxElement.addEventListener("click", function (event) {
         if (event.target === this) {
             closeLightbox();
         }
     });
 }
 
-// Close with ESC key
+
+/* =========================================
+   ESC KEY
+========================================= */
+
 document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
         closeLightbox();
@@ -98,27 +125,23 @@ document.addEventListener("keydown", function (event) {
 /* =========================================
    FLOATING HEARTS
 ========================================= */
-function createHeart() {
-    const container = document.querySelector(".hearts-container");
-    if (!container) return;
 
+function createHeart() {
     const heart = document.createElement("div");
+
     heart.className = "heart";
     heart.innerHTML = Math.random() > 0.5 ? "♡" : "♥";
 
     heart.style.left = Math.random() * 100 + "vw";
-    
-    const size = 12 + Math.random() * 18;
-    heart.style.fontSize = size + "px";
+    heart.style.fontSize = (10 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (6 + Math.random() * 5) + "s";
 
-    const duration = 6 + Math.random() * 5;
-    heart.style.animationDuration = duration + "s";
-
-    container.appendChild(heart);
+    document.body.appendChild(heart);
 
     setTimeout(() => {
         heart.remove();
-    }, duration * 1000);
+    }, 11000);
 }
 
-setInterval(createHeart, 1600);
+// สร้างหัวใจทุก 1.5 วินาที
+setInterval(createHeart, 1500);
